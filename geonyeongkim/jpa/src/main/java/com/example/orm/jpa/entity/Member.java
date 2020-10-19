@@ -1,106 +1,41 @@
 package com.example.orm.jpa.entity;
 
-import com.example.orm.jpa.enums.RoleType;
-
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name="MEMBER", uniqueConstraints = {@UniqueConstraint( //추가 //**
-        name = "NAME_AGE_UNIQUE",
-        columnNames = {"NAME", "AGE"} )})
 public class Member {
 
     @Id
-    @Column(name = "ID")
-    private String id;
+    @Column(name = "MEMBER_ID")
+    private long id;
 
-    @Column(name = "NAME", nullable = false, length = 10) //추가 //**
-//    @Column(name = "NAME") //추가 //**
-    private String username;
+    private String name;
 
-    private Integer age;
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
 
-    //=== 추가
-    @Enumerated(EnumType.STRING)
-    private RoleType roleType;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date lastModifiedDate;
-
-    @Lob
-    private String description;
-
-    @Transient
-    private String temp;
-
-
-    //Getter, Setter
-
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
+    public Team getTeam() {
+        return team;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public RoleType getRoleType() {
-        return roleType;
-    }
-
-    public void setRoleType(RoleType roleType) {
-        this.roleType = roleType;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getTemp() {
-        return temp;
-    }
-
-    public void setTemp(String temp) {
-        this.temp = temp;
+    public void setTeam(Team team) {
+        this.team = team;
     }
 }
