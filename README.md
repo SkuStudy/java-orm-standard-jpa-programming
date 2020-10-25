@@ -36,6 +36,7 @@
 ## Schedule
 - 매주 `일요일 18:00 ~ 20:00`  
 - 장소 [종각 누구나](https://map.naver.com/v5/search/%EC%A2%85%EA%B0%81%20%EB%88%84%EA%B5%AC%EB%82%98/place/21290050?placeSearchOption=fromNxList=true%26noredirect=1%26entry=pll&c=14135827.6704000,4518806.6451502,13,0,0,0,dh&placePath=%2Fhome%3Fentry=pll)  
+    - 학생증 있는 사람은 시간당 500원 할인 가능 !
 
 |회차|내용|발표자|날짜|
 | :---: | :---: | :---: | :---: |
