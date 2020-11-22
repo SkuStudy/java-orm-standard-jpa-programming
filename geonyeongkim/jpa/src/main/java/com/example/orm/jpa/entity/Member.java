@@ -1,41 +1,37 @@
 package com.example.orm.jpa.entity;
 
+import lombok.*;
+
 import javax.persistence.*;
 
+@Setter
+//@SequenceGenerator(
+//        name="USER_SEQ_GEN",
+//        sequenceName="USER_SEQ",
+//        allocationSize=1
+//)
+@Getter
 @Entity
+@ToString
+//@IdClass(MemberId.class)
+@NoArgsConstructor
 public class Member {
 
     @Id
-    @Column(name = "MEMBER_ID")
+//    @GeneratedValue(
+//            strategy= GenerationType.SEQUENCE,
+//            generator="USER_SEQ_GEN"
+//    )
     private long id;
 
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "TEAM_ID")
-    private Team team;
+    private int cnt;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
+    @Builder
+    public Member(long id, String name, int cnt) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
-    }
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
+        this.cnt = cnt;
     }
 }
