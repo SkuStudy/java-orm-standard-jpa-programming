@@ -1,0 +1,1 @@
+- [16장 정리](https://kimjinyounga.github.io/server/JPA_16/)
